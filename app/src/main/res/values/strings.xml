@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Clube dos Aplicativos - Book Listing</string>
+    <string name="search_button_name">Search</string>
+    <string name="message_no_value">There are no books available at the moment...</string>
+</resources>
