@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         ArrayList<Books> bookList = savedInstanceState.getParcelableArrayList(BOOK_LIST);
-        this.mGoogleBooksAdapter.addAll(bookList);
+        if (bookList != null) this.mGoogleBooksAdapter.addAll(bookList);
     }
 
     private void performBookSearch(String searchTerm) {
