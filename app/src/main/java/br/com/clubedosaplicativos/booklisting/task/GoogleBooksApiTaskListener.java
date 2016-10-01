@@ -1,10 +1,12 @@
 package br.com.clubedosaplicativos.booklisting.task;
 
-import br.com.clubedosaplicativos.booklisting.model.GoogleBooksResponse;
+import java.util.List;
+
+import br.com.clubedosaplicativos.booklisting.model.Books;
 
 /**
  * Created by elifa on 01/10/2016.
  */
 public interface GoogleBooksApiTaskListener {
-    void onGoogleBooksApiFetchBookResponse(GoogleBooksResponse response);
+    void onGoogleBooksApiFetchBookResponse(List<Books> bookList);
 }

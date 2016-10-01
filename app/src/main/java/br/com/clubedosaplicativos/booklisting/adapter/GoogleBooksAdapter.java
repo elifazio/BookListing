@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import br.com.clubedosaplicativos.booklisting.R;
 import br.com.clubedosaplicativos.booklisting.model.Books;
 
@@ -17,8 +21,16 @@ import br.com.clubedosaplicativos.booklisting.model.Books;
 
 public class GoogleBooksAdapter extends ArrayAdapter<Books> {
 
+    private Collection<? extends Books>  mBookList;
+
     public GoogleBooksAdapter(Context context) {
         super(context, R.layout.book_list_item);
+    }
+
+    @Override
+    public void addAll(Collection<? extends Books> collection) {
+        super.addAll(collection);
+        this.mBookList = collection;
     }
 
     @NonNull
@@ -58,6 +70,10 @@ public class GoogleBooksAdapter extends ArrayAdapter<Books> {
         viewHolder.tvAuthors.setText(authors);
 
         return convertView;
+    }
+
+    public ArrayList<Books> getBookList() {
+        return (ArrayList<Books>) mBookList;
     }
 
     static class ViewHolder {
